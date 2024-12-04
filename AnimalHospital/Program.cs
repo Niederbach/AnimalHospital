@@ -40,8 +40,7 @@
             //=================================================================
             //D.
             var filterAnimals = ListOfAnimals
-                .Where(x => x.AmountOfLegs == 4)
-                .Where(x => x.AnimalAge > 3)
+                .Where(x => x.AmountOfLegs == 4 && x.AnimalAge > 3)
                 .ToList();
 
             Console.WriteLine("Dem Här djuren är Filtrerade");
@@ -55,10 +54,16 @@
                 Console.WriteLine("-----------------");
 
             }
+            Console.WriteLine();
 
             //=================================================================
             //E.
+            var hasShadow = ListOfAnimals.Any(x => x.AnimalName == "Shadow");
 
+            if (hasShadow)
+                Console.WriteLine("Något djur heter shadow");
+            else
+                Console.WriteLine("Det finns inget djur som heter shadow");
 
 
 
